@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PersonalTracking.StorageRepository.Models.RescueTimeLog>
+
+
+<table class="table">
+    <caption>
+        RescueTime
+    </caption>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Productive Pulse</th>
+            <th>Total Time</th>
+            <th>Distracting Time</th>
+            <th>Neutral Time</th>
+            <th>Productive Time</th>
+
+
+            <th>Distracting %</th>
+            <th>Neutral %</th>
+            <th>Productive %</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Date.ToShortDateString()</td>
+                <td>@item.ProductivityPulse.ToString()</td>
+                <td>@item.Total.ToString()</td>
+                <td>@item.Distracting.ToString()</td>
+                <td>@item.Neutral.ToString()</td>
+                <td>@item.Productive.ToString()</td>
+
+
+                <td>@item.DistractingPercentage.ToString()</td>
+                <td>@item.NeutralPercentage.ToString()</td>
+                <td>@item.ProductivePercentage.ToString()</td>
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PersonalTracking.StorageRepository.Models.WeatherLog>
+
+
+
+<table class="table">
+    <caption>
+        Weather
+    </caption>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Clouds</th>
+            <th>Humidty</th>
+            <th>Pressure</th>
+            <th>Rain</th>
+            <th>Sunrise</th>
+            <th>Sunset</th>
+            <th>Temperature</th>
+            <th>Wind Degree</th>
+            <th>Wind Speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Date.ToShortDateString()</td>
+                <td>@item.Description</td>
+                <td>@item.Clouds</td>
+                <td>@item.Humidty</td>
+                <td>@item.Pressure</td>
+                <td>@item.Rain</td>
+                <td>@item.SunriseAt</td>
+                <td>@item.SunsetAt</td>
+                <td>@item.Temperature</td>
+                <td>@item.WindDegree</td>
+                <td>@item.WindSpeed</td>
+            </tr>
+        }
+    </tbody>
+</table>

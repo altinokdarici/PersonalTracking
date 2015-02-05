@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PersonalTracking.StorageRepository.Models.DailyLog>
+
+<table class="table">
+    <caption>
+        Fitbit
+    </caption>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>CaloriesOut</th>
+            <th>FairlyActive</th>
+            <th>LightlyActive</th>
+            <th>Sedentary</th>
+            <th>Steps</th>
+            <th>VeryActive</th>
+            <th>Sleep</th>
+            <th>TimeInBad</th>
+            <th>Distance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Date.ToShortDateString()</td>
+                <td>@item.CaloriesOut</td>
+                <td>@item.FairlyActive.ToString()</td>
+                <td>@item.LightlyActive.ToString()</td>
+                <td>@item.Sedentary.ToString()</td>
+                <td>@item.Steps</td>
+                <td>@item.VeryActive.ToString()</td>
+                <td>@item.Sleep.ToString()</td>
+                <td>@item.TimeInBad.ToString()</td>
+                <td>@item.Distance</td>
+            </tr>
+        }
+    </tbody>
+</table>
